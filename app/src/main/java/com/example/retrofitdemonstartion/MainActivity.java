@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void postTodo(View view){
         ToDo todo = new ToDo(100, 256, "Vanier is cold tody", true);
-        Call<ToDo> toDoCall = aPiInterface.postTod(todo);
+        Call<ToDo> call = aPiInterface.postTod(todo);
 
-        toDoCall.enqueue(new Callback<ToDo>() {
+        call.enqueue(new Callback<ToDo>() {
             @Override
             public void onResponse(Call<ToDo> call, Response<ToDo> response) {
                 Log.e(TAG, "On response"+ response.body());

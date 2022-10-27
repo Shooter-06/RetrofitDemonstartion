@@ -4,6 +4,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -19,7 +20,7 @@ public interface APiInterface
     Call<ToDo> getTodosusingQuery(@Query("userId")int userId,
                                   @Query("completed")boolean completed);
 
-    @GET("/todos")
+    @POST("/todos")
     Call<ToDo> postTod(@Body ToDo toDo);
 
 }
